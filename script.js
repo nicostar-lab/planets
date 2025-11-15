@@ -5,7 +5,8 @@ const gravityFactors = {
             Jupiter: 2.34,
             Saturne: 1.06,
             Uranus: 0.92,
-            Neptune: 1.19
+            Neptune: 1.19,
+            Terre: 9.81,
         };
 
         document.getElementById('weightForm').addEventListener('submit', function(event) {
@@ -17,9 +18,18 @@ const gravityFactors = {
             const gravityFactor = gravityFactors[planet];
             if (gravityFactor) {
                 document.getElementById('weightForm').style.display = 'none';
+                document.getElementById('resultbox').classList.remove('hidden');
                 const calculatedWeight = earthWeight * gravityFactor;
                 document.getElementById('result').textContent = `Ton poids sur ${planet} serait de ${calculatedWeight.toFixed(2)} kg.`;
             } else {
                 document.getElementById('result').textContent = "Please select a valid planet.";
             }
         });
+const resetBtn = document.getElementById('reset');
+if (resetBtn) {
+    resetBtn.addEventListener('click', function(event) {
+        
+        event.preventDefault();
+        location.reload();
+    });
+}    

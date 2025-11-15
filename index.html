@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planets weight</title>
+    <link href="src/output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="src/asset/profile.jpg" type="image/x-icon">
+</head>
+<body class="bg-black  text-white min-h-screen flex flex-col items-center justify-center p-4">
+    <img src="src/asset/terre.png" alt="planet image" class=" mb-6 absolute -z-10 ">
+    
+    <form id="weightForm" class="bg-purple-400 p-6 rounded-lg shadow-lg w-full max-w-md ">
+        <h1 class="text-2xl font-bold text-center   text-black bg-purple-400 p-6 rounded-lg shadow-lg w-full max-w-md ">Calcule le poids des objet sur différentes planètes</h1>
+        <div class="mb-4">
+            <label for="earthWeight" class="block text-lg mb-2">Entrez votre poids sur Terre (kg) :</label>
+            <input type="number" id="earthWeight" class="w-full p-2 rounded border border-purple-600 bg-purple-700 text-white" required>
+        </div>
+        <div class="mb-4">
+            <label for="planet" class="block text-lg mb-2">Sélectionnez une planète :</label>
+            <select id="planet" class="w-full p-2 rounded border border-purple-600 bg-purple-700 text-white" required>
+                <option value="" disabled selected>Sélectionnez une planète</option>
+                <option value="Mercure">Mercure</option>
+                <option value="Vénus">Vénus</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturne">Saturne</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+                <option value="Terre">Terre</option>
+
+            </select>
+        </div>
+        <button type="submit" class="w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Calculate Weight</button>
+    </form>
+    <div id="result" class="mt-6 text-xl font-bold text-black shadow-black bg-purple-400 p-6 rounded-lg shadow-lg w-full max-w-md"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
